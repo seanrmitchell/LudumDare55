@@ -10,15 +10,19 @@ public class Health : MonoBehaviour
     [SerializeReference]
     private float currentHealth;
 
+    private SpriteRenderer sprite;
+
     // Start is called before the first frame update
     void Awake()
     {
         currentHealth = health;
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     public void UpdateHealth(float mod)
     {
         currentHealth -= mod;
+        StartCoroutine(GotHit());
 
         if (currentHealth <= 0f) 
         {
@@ -34,5 +38,13 @@ public class Health : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+
+    IEnumerator GotHit()
+    {
+        var spriteCol = sprite.color;
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(1f);
+        sprite.color = spriteCol;
     }
 }

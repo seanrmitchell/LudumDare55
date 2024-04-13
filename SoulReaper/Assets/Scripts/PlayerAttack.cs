@@ -11,6 +11,7 @@ public class PlayerAttack : MonoBehaviour
     public float attackDamage;
     public float attackSpeed;
     public Transform attackPos;
+    public Animator anim;
 
     private Vector3 mousePos;
 
@@ -24,9 +25,11 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        
 
         if (Input.GetMouseButtonDown(0))
         {
+            anim.SetTrigger("Attacking");
             RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, mousePos - transform.position);
             
             foreach(RaycastHit2D obj in hit)
