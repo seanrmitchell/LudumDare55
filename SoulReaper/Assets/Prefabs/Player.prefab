@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 2699072227072092730}
   - component: {fileID: 4371336592099421434}
   - component: {fileID: 5802873545918485102}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &1363473181835861434
 MonoBehaviour:
@@ -192,6 +192,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   isPlayer: 1
+  anim: {fileID: 5802873545918485102}
   currentHealth: 0
 --- !u!114 &2699072227072092730
 MonoBehaviour:
@@ -210,6 +211,9 @@ MonoBehaviour:
   attackDamage: 1
   attackSpeed: 0
   attackPos: {fileID: 7450342980229822743}
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
   anim: {fileID: 5802873545918485102}
 --- !u!114 &4371336592099421434
 MonoBehaviour:
@@ -223,6 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b310402f92c6e794f914abe8cf37842f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  summonTime: 3
   summonImg: {fileID: 0}
   enemyType:
   - {fileID: 1360618879473509312, guid: 562d7fa1fdc8b534080fd3fd52db70ac, type: 3}
@@ -256,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7450342980229822743}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Attack Location
   m_TagString: Untagged
   m_Icon: {fileID: 0}

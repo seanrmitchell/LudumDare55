@@ -7,7 +7,7 @@ public class AllyAttack : MonoBehaviour
     public float attackDamage;
     public float attackSpeed;
     public float attackRadius;
-    public GameObject target;
+    public LayerMask enemyLayer;
 
     private bool hasAttack = true;
 
@@ -16,14 +16,11 @@ public class AllyAttack : MonoBehaviour
         
         if (hasAttack)
         {
-            foreach (Collider2D col in Physics2D.OverlapCircleAll(transform.position, attackRadius))
+            foreach (Collider2D col in Physics2D.OverlapCircleAll(transform.position, attackRadius, enemyLayer))
             {
-                if (col.gameObject.CompareTag("Enemy") && Vector2.Distance(col.transform.position, transform.position) <= attackRadius)
-                {
-                    Debug.Log(col.gameObject.name + "GOT HIT!");
-                    col.gameObject.GetComponent<Health>().UpdateHealth(attackDamage);
-                    StartCoroutine(AttackCycle(attackSpeed));
-                }
+                //Debug.Log(col.gameObject.name + "GOT HIT!");
+                col.gameObject.GetComponent<EnemyHealth>().UpdateHealth(attackDamage);
+                StartCoroutine(AttackCycle(attackSpeed));
             }
         }
     }

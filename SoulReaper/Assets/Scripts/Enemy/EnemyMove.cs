@@ -20,7 +20,7 @@ public class EnemyMove : MonoBehaviour
     {
         player = GameObject.Find("Player");
         target = player;
-        stoppingRad = GetComponent<EnemyAttack>().attackRadius;
+        stoppingRad = GetComponent<EnemyAttack>().attackRadius * 0.5f;
     }
 
     // Update is called once per frame

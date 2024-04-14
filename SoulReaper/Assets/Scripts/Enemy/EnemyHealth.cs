@@ -5,15 +5,16 @@ using UnityEngine.U2D;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float health = 0f;
+    public float health;
     public Animator anim;
-    public AnimationClip deathAnim;
+    public GameObject preFabObj;
 
     [SerializeReference]
     private float currentHealth;
 
     private SpriteRenderer sprite;
     private Summoning summons;
+    private bool isAlive = true;
 
     // Start is called before the first frame update
     void Awake()
@@ -25,14 +26,18 @@ public class EnemyHealth : MonoBehaviour
 
     public void UpdateHealth(float mod)
     {
-        currentHealth -= mod;
-        StartCoroutine(GotHit());
-
-        if (currentHealth <= 0f)
+        if (isAlive)
         {
-            currentHealth = 0f;
-            summons.SetSummonCreature(gameObject.layer);
-            StartCoroutine(WaitDeath());
+            currentHealth -= mod;
+            StartCoroutine(GotHit());
+
+            if (currentHealth <= 0f)
+            {
+                isAlive = false;
+                currentHealth = 0f;
+                summons.SetSummonCreature(preFabObj);
+                StartCoroutine(WaitDeath());
+            }
         }
     }
 
@@ -49,7 +54,7 @@ public class EnemyHealth : MonoBehaviour
         gameObject.GetComponent<EnemyAttack>().enabled = false;
         gameObject.GetComponent<EnemyMove>().enabled = false;
         anim.SetTrigger("Dying");
-        yield return new WaitForSeconds(deathAnim.length);
+        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
         Destroy(gameObject);
     }
 }

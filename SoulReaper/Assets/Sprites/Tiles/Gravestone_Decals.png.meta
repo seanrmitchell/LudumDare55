@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 00cb98200c58a024bb570771031c6405
+guid: 2b78d5b90abe96f4b803144b5934fd80
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: silhoutte_Enemy_0
+      name: Gravestone_Decals_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 8
-        width: 35
-        height: 49
+        x: 9
+        y: 2
+        width: 22
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,8 +137,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b75f506e96309d1429c3e5c6cd9939c2
-      internalID: -1965921024
+      spriteID: a4e827dc4540b8e4282ea97823046386
+      internalID: 1247082846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gravestone_Decals_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 14
+        width: 16
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4e75cf9795dc24ebbd203ee31420e8
+      internalID: 2143849918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gravestone_Decals_3
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 196e9b77ee5fd5f4e92e6bbeaadf65a9
+      internalID: -1748226593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Gravestone_Decals_4
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a289d7bd42521a4b8a799c41dab3a98
+      internalID: -806801455
       vertices: []
       indices: 
       edges: []
@@ -154,7 +217,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      silhoutte_Enemy_0: -1965921024
+      Gravestone_Decals_0: 1247082846
+      Gravestone_Decals_1: 2143849918
+      Gravestone_Decals_2: 1570405357
+      Gravestone_Decals_3: -1748226593
+      Gravestone_Decals_4: -806801455
+      Gravestone_Decals_5: 542740207
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

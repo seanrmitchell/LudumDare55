@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 253867267609866812}
   - component: {fileID: 5702856772269286631}
   - component: {fileID: 1635901327782327243}
-  - component: {fileID: 6719680878101748194}
+  - component: {fileID: 2875158474138744684}
   - component: {fileID: 5607970857029579343}
-  m_Layer: 6
+  - component: {fileID: -5575043561343996339}
+  m_Layer: 7
   m_Name: Melee Enemy (ALLY)
   m_TagString: Ally Creature
   m_Icon: {fileID: 0}
@@ -78,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -469284891, guid: e7808e9fa2152664083e68fe9e2a7798, type: 3}
-  m_Color: {r: 0, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 456572152, guid: dfaffd2d3124e8b44be0e363b830e939, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,18 +122,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0074643493, y: -0.10650021}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.890625, y: 0.765625}
+    oldSize: {x: 0.546875, y: 0.765625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.56711257, y: 0.54816616}
   m_EdgeRadius: 0
 --- !u!114 &1635901327782327243
 MonoBehaviour:
@@ -146,11 +147,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa47e1e5b49cd44a9dd672b86a98147, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 1
+  attackDamage: 0.5
   attackSpeed: 5
   attackRadius: 2
-  target: {fileID: 0}
---- !u!114 &6719680878101748194
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!114 &2875158474138744684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,6 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   isPlayer: 0
+  anim: {fileID: -5575043561343996339}
   currentHealth: 0
 --- !u!50 &5607970857029579343
 Rigidbody2D:
@@ -192,6 +196,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!95 &-5575043561343996339
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360618879473509312}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4a6bcd91ee48ec243ac1bf97edb9f6a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7942105869160788313
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3081500262280069364}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Attack Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}

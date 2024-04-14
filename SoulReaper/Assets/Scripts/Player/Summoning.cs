@@ -5,11 +5,18 @@ using UnityEngine.UI;
 
 public class Summoning : MonoBehaviour
 {
+    public float summonTime;
     public Image summonImg;
     public GameObject[] enemyType;
 
     private GameObject tempObj;
     private bool canSummon = false;
+    private Sprite orgImg;
+
+    private void Start()
+    {
+        orgImg = summonImg.sprite;
+    }
 
     private void Update()
     {
@@ -19,16 +26,9 @@ public class Summoning : MonoBehaviour
         }
     }
 
-    public void SetSummonCreature(int layer)
+    public void SetSummonCreature(GameObject obj)
     {
-        foreach(GameObject enemy in enemyType)
-        {
-            if (enemy.layer == layer)
-            {
-                tempObj = enemy; 
-                break;
-            }
-        }
+        tempObj = obj; 
         summonImg.sprite = tempObj.GetComponent<SpriteRenderer>().sprite;
         StartCoroutine(SummonCreatureTime());
     }
@@ -39,7 +39,7 @@ public class Summoning : MonoBehaviour
         Instantiate(tempObj, transform.position + Vector3.right, tempObj.transform.rotation);
 
         canSummon = false;
-        summonImg.sprite = null;
+        summonImg.sprite = orgImg;
         tempObj = null;
 
         StopAllCoroutines();
@@ -48,9 +48,10 @@ public class Summoning : MonoBehaviour
     public IEnumerator SummonCreatureTime()
     {
         canSummon = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(summonTime);
+        tempObj = null;
         canSummon = false;
-        summonImg.sprite = null;
+        summonImg.sprite = orgImg;
     }  
 
 

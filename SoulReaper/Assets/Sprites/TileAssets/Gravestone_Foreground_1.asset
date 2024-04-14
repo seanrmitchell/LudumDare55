@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Gravestone_Tiles
+  m_Name: Gravestone_Foreground_1
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -2130167567, guid: 202044b1bcd70c2458a3578af51d87f9, type: 3}
+  m_Sprite: {fileID: -283904050, guid: 11d4955f7418da746882f06135fe44d4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

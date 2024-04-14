@@ -8,19 +8,17 @@ public class EnemyAttack : MonoBehaviour
     public float attackSpeed;
     public float attackRadius;
     private bool hasAttack = true;
+    public LayerMask allyLayer;
 
     private void Update()
     {
         if (hasAttack)
         {
-            foreach (Collider2D col in Physics2D.OverlapCircleAll(transform.position, attackRadius))
+            foreach (Collider2D col in Physics2D.OverlapCircleAll(transform.position, attackRadius, allyLayer))
             {
-                if (!col.CompareTag("Enemy") && Vector2.Distance(col.transform.position, transform.position) <= attackRadius)
-                {
-                    Debug.Log(col.gameObject.name + "GOT HIT!");
-                    col.gameObject.GetComponent<Health>().UpdateHealth(attackDamage);
-                    StartCoroutine(AttackCycle(attackSpeed));
-                }
+                Debug.Log(col.gameObject.name + "GOT HIT!");
+                col.gameObject.GetComponent<Health>().UpdateHealth(attackDamage);
+                StartCoroutine(AttackCycle(attackSpeed));
             }
         }
     }
