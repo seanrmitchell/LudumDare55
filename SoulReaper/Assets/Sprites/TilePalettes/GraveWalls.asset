@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GraveWalls
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 7482667652216324306, guid: 79040dba8c736b3438f1834e3f544ee1, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.06666667, g: 0.09411766, b: 0.039215688, a: 1}
   m_Transform:
     e00: 1
     e01: 0

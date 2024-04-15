@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5235435548193699062}
   - component: {fileID: 6373994370410565371}
   - component: {fileID: 258457064280066141}
+  - component: {fileID: -5628182766859935055}
   - component: {fileID: 5607970857029579343}
   - component: {fileID: 5667513911739666585}
   m_Layer: 6
@@ -151,6 +152,8 @@ MonoBehaviour:
   health: 3
   anim: {fileID: 5667513911739666585}
   preFabObj: {fileID: 1360618879473509312, guid: 562d7fa1fdc8b534080fd3fd52db70ac, type: 3}
+  isAlive: 1
+  animClip: {fileID: 7400000, guid: d4fc14da26091d74489f36834e5d4556, type: 2}
   currentHealth: 0
 --- !u!114 &6373994370410565371
 MonoBehaviour:
@@ -184,6 +187,18 @@ MonoBehaviour:
   allyLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &-5628182766859935055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360618879473509312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa20d1d3c7fdc2849ab07ea8fd4931f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &5607970857029579343
 Rigidbody2D:
   serializedVersion: 4

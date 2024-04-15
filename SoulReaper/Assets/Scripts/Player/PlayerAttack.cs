@@ -12,8 +12,10 @@ public class PlayerAttack : MonoBehaviour
     public float attackSpeed;
     
     public Transform attackPos;
-    public LayerMask enemyLayer;
     public Animator anim;
+    public LayerMask enemyLayer;
+
+    public Score score;
 
     private Vector3 mousePos;
     private bool hasAttack = true;
@@ -41,6 +43,11 @@ public class PlayerAttack : MonoBehaviour
                 {
                     Debug.Log(obj.collider.gameObject.name + " GOT HIT!!");
                     obj.collider.gameObject.GetComponent<EnemyHealth>().UpdateHealth(attackDamage);
+
+                    if (!obj.collider.gameObject.GetComponent<EnemyHealth>().isAlive)
+                    {
+                        score.soulsCollected++;
+                    }
                 }
             }
 

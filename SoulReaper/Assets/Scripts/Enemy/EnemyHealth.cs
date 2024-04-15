@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.U2D;
 
 public class EnemyHealth : MonoBehaviour
 {
     public float health;
     public Animator anim;
     public GameObject preFabObj;
+    public bool isAlive = true;
+
+    [SerializeField]
+    private AnimationClip animClip;
 
     [SerializeReference]
     private float currentHealth;
 
     private SpriteRenderer sprite;
     private Summoning summons;
-    private bool isAlive = true;
 
     // Start is called before the first frame update
     void Awake()
@@ -35,26 +37,31 @@ public class EnemyHealth : MonoBehaviour
             {
                 isAlive = false;
                 currentHealth = 0f;
-                summons.SetSummonCreature(preFabObj);
-                StartCoroutine(WaitDeath());
+
+                EnemyDeath();
             }
         }
     }
 
+    void EnemyDeath()
+    {
+        // Passes coordinating Ally object to Player Summons Class
+        summons.SetSummonCreature(preFabObj);
+
+        // Begins Enemy Death Animation
+        anim.SetTrigger("Dying");
+        gameObject.GetComponent<EnemyAttack>().enabled = false;
+        gameObject.GetComponent<EnemyMove>().enabled = false;
+        gameObject.GetComponent<EnemyHealth>().enabled = false;
+        
+    }
+
     IEnumerator GotHit()
     {
+        // Colors the obj sprite red when it takes damage
         var spriteCol = sprite.color;
         sprite.color = Color.red;
         yield return new WaitForSeconds(0.1f);
         sprite.color = spriteCol;
-    }
-
-    IEnumerator WaitDeath()
-    {
-        gameObject.GetComponent<EnemyAttack>().enabled = false;
-        gameObject.GetComponent<EnemyMove>().enabled = false;
-        anim.SetTrigger("Dying");
-        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
-        Destroy(gameObject);
     }
 }

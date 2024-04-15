@@ -6,16 +6,18 @@ TagManager:
   tags:
   - Enemy
   - Ally Creature
+  - Melee Enemy
+  - Ranged Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - Melee Enemies
-  - Ranged Enemies
-  - 
+  - Enemy
+  - Ally
+  - Ground
   - 
   - 
   - 
