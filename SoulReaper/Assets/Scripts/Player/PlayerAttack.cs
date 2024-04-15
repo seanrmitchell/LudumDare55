@@ -11,8 +11,10 @@ public class PlayerAttack : MonoBehaviour
     public float attackDamage;
     public float attackSpeed;
     
-    public Transform attackPos;
-    public Animator anim;
+    public Transform attackLoc;
+    public Animator animPlayer;
+    public Animator animSlash;
+
     public LayerMask enemyLayer;
 
     public Score score;
@@ -30,11 +32,22 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        
 
         if (hasAttack && Input.GetMouseButtonDown(0))
         {
-            anim.SetTrigger("Attacking");
+            attackLoc.rotation = Quaternion.identity;
+            attackLoc.position = transform.position + Vector3.ClampMagnitude(mousePos - attackLoc.position, attackDistance);
+            
+            Vector2 objPos;
+            objPos.x = mousePos.x - attackLoc.position.x;
+            objPos.y = mousePos.y - attackLoc.position.y;
+            var targetAngle = Mathf.Atan2(objPos.x, objPos.y) * Mathf.Rad2Deg;
+            Debug.Log(targetAngle);
+            attackLoc.rotation = Quaternion.Euler(0f, 0f, targetAngle);
+            
+
+            animPlayer.SetTrigger("Attacking");
+
             RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, mousePos - transform.position, attackDistance, enemyLayer);
             
             foreach(RaycastHit2D obj in hit)
@@ -56,10 +69,15 @@ public class PlayerAttack : MonoBehaviour
 
     }
 
+    public void StartSlash()
+    {
+        animSlash.SetTrigger("Attacking");
+    }
+
     IEnumerator WaitAttack()
     {
         hasAttack = false;
-        yield return new WaitForSeconds(anim.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(animPlayer.GetCurrentAnimatorStateInfo(0).length);
         hasAttack = true;
     }
 

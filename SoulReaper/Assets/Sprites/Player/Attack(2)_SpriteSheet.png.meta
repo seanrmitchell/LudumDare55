@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2a5372c89a631bb4390233cdb48d9925
+guid: 3c255582391ca404884ce26dd510e2a6
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,55 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gravestone_Decals (2)_1
+      name: Attack(2)_SpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 33
-        width: 19
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10f79da26d0b7224eacf7a93820f3fa0
-      internalID: -344482987
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gravestone_Decals (2)_3
-      rect:
-        serializedVersion: 2
-        x: 59
-        y: 25
-        width: 20
-        height: 19
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 764f47bdecb12f44ca863adbe15faaf5
-      internalID: -200121689
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Gravestone_Decals (2)_4
-      rect:
-        serializedVersion: 2
-        x: 90
+        x: 91
         y: 8
-        width: 19
-        height: 39
+        width: 58
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +137,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b4c844e72f1deb478a2646133aae7f2
-      internalID: 769708393
+      spriteID: 60458e728ed69f840b7a7c09f05440a7
+      internalID: -1547377847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack(2)_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 8
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241e79b8f82196a458d787e829be8b77
+      internalID: 1575764310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack(2)_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 8
+        width: 59
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4b3b15b11c519745b580a8fb7b9ae2f
+      internalID: 1725594792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack(2)_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 8
+        width: 58
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e96cf03fd32fe9e428a76483eef4a5d2
+      internalID: -1827091017
       vertices: []
       indices: 
       edges: []
@@ -196,11 +217,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gravestone_Decals (2)_0: -1852924140
-      Gravestone_Decals (2)_1: -344482987
-      Gravestone_Decals (2)_2: -1175605176
-      Gravestone_Decals (2)_3: -200121689
-      Gravestone_Decals (2)_4: 769708393
+      Attack(2)_SpriteSheet_0: -1547377847
+      Attack(2)_SpriteSheet_1: 1575764310
+      Attack(2)_SpriteSheet_2: -1827091017
+      Attack(2)_SpriteSheet_3: 1634842537
+      Attack(2)_SpriteSheet_4: -446495411
+      Attack(2)_SpriteSheet_5: -141222829
+      Attack(2)_SpriteSheet_6: 1936628794
+      Attack(2)_SpriteSheet_7: 1725594792
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

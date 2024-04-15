@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2a5372c89a631bb4390233cdb48d9925
+guid: 34f4ff2a6c51172478b7600247a8258b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Gravestone_Decals (2)_1
+      name: Obstacles Sprites_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 33
-        width: 19
-        height: 16
+        x: 1
+        y: 80
+        width: 78
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 10f79da26d0b7224eacf7a93820f3fa0
-      internalID: -344482987
+      spriteID: 91011c811feab2c4da1e8e768cb191d3
+      internalID: 1522841917
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gravestone_Decals (2)_3
+      name: Obstacles Sprites_1
       rect:
         serializedVersion: 2
-        x: 59
-        y: 25
-        width: 20
-        height: 19
+        x: 161
+        y: 80
+        width: 78
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 764f47bdecb12f44ca863adbe15faaf5
-      internalID: -200121689
+      spriteID: de2d9598771145c48a1ab788dd517993
+      internalID: -332030677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gravestone_Decals (2)_4
+      name: Obstacles Sprites_2
       rect:
         serializedVersion: 2
-        x: 90
-        y: 8
-        width: 19
-        height: 39
+        x: 81
+        y: 0
+        width: 78
+        height: 80
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b4c844e72f1deb478a2646133aae7f2
-      internalID: 769708393
+      spriteID: f267ab88e5041ae458b384d472f24463
+      internalID: 1990637259
       vertices: []
       indices: 
       edges: []
@@ -196,11 +196,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Gravestone_Decals (2)_0: -1852924140
-      Gravestone_Decals (2)_1: -344482987
-      Gravestone_Decals (2)_2: -1175605176
-      Gravestone_Decals (2)_3: -200121689
-      Gravestone_Decals (2)_4: 769708393
+      Obstacles Sprites_0: 1522841917
+      Obstacles Sprites_1: -332030677
+      Obstacles Sprites_2: 1990637259
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
