@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 253867267609866812}
   - component: {fileID: 5702856772269286631}
   - component: {fileID: 1635901327782327243}
-  - component: {fileID: 2875158474138744684}
+  - component: {fileID: 4539602685746318525}
   - component: {fileID: -1176115853060883952}
   - component: {fileID: 5607970857029579343}
   - component: {fileID: -5575043561343996339}
@@ -154,7 +154,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
---- !u!114 &2875158474138744684
+--- !u!114 &4539602685746318525
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,11 +163,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1360618879473509312}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 096bcbf81ffab434f88e5033446a73c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c4478a500958fe4dbe9f5af9f28f251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  isPlayer: 0
   anim: {fileID: -5575043561343996339}
   currentHealth: 0
 --- !u!114 &-1176115853060883952
@@ -201,7 +200,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0

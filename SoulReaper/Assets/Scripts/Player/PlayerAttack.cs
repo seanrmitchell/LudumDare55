@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.GraphicsBuffer;
+using UnityEngine.Audio;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -12,8 +13,10 @@ public class PlayerAttack : MonoBehaviour
     public float attackSpeed;
     
     public Transform attackLoc;
+
     public Animator animPlayer;
     public Animator animSlash;
+    public AudioSource attackSound;
 
     public LayerMask enemyLayer;
 
@@ -21,12 +24,6 @@ public class PlayerAttack : MonoBehaviour
 
     private Vector3 mousePos;
     private bool hasAttack = true;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -41,29 +38,13 @@ public class PlayerAttack : MonoBehaviour
             Vector2 objPos;
             objPos.x = mousePos.x - attackLoc.position.x;
             objPos.y = mousePos.y - attackLoc.position.y;
-            var targetAngle = Mathf.Atan2(objPos.x, objPos.y) * Mathf.Rad2Deg;
+            var targetAngle = Mathf.Atan2(objPos.y, objPos.x) * Mathf.Rad2Deg;
             Debug.Log(targetAngle);
-            attackLoc.rotation = Quaternion.Euler(0f, 0f, targetAngle);
-            
+            targetAngle -= 90f;
+            attackLoc.rotation = Quaternion.Euler(new Vector3(0f, 0f, targetAngle));
+
 
             animPlayer.SetTrigger("Attacking");
-
-            RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, mousePos - transform.position, attackDistance, enemyLayer);
-            
-            foreach(RaycastHit2D obj in hit)
-            {
-                if (Vector3.Distance(obj.collider.transform.position, transform.position) <= attackDistance)
-                {
-                    Debug.Log(obj.collider.gameObject.name + " GOT HIT!!");
-                    obj.collider.gameObject.GetComponent<EnemyHealth>().UpdateHealth(attackDamage);
-
-                    if (!obj.collider.gameObject.GetComponent<EnemyHealth>().isAlive)
-                    {
-                        score.soulsCollected++;
-                    }
-                }
-            }
-
             StartCoroutine(WaitAttack());
         }
 
@@ -72,6 +53,23 @@ public class PlayerAttack : MonoBehaviour
     public void StartSlash()
     {
         animSlash.SetTrigger("Attacking");
+        attackSound.Play();
+
+        RaycastHit2D[] hit = Physics2D.RaycastAll(transform.position, mousePos - transform.position, attackDistance, enemyLayer);
+
+        foreach (RaycastHit2D obj in hit)
+        {
+            if (Vector3.Distance(obj.collider.transform.position, transform.position) <= attackDistance)
+            {
+                Debug.Log(obj.collider.gameObject.name + " GOT HIT!!");
+                obj.collider.gameObject.GetComponent<EnemyHealth>().UpdateHealth(attackDamage);
+
+                if (!obj.collider.gameObject.GetComponent<EnemyHealth>().isAlive)
+                {
+                    score.soulsCollected++;
+                }
+            }
+        }
     }
 
     IEnumerator WaitAttack()

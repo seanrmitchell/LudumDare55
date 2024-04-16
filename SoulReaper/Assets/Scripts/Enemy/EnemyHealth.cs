@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     public float health;
     public Animator anim;
     public GameObject preFabObj;
+    public EnemySpawner spawner;
     public bool isAlive = true;
 
     [SerializeField]
@@ -22,6 +23,8 @@ public class EnemyHealth : MonoBehaviour
     void Awake()
     {
         currentHealth = health;
+
+        spawner = GameObject.Find("Enemy Spawner").GetComponent<EnemySpawner>();
         sprite = GetComponent<SpriteRenderer>();
         summons = GameObject.Find("Player").GetComponent<Summoning>();
     }
@@ -47,6 +50,9 @@ public class EnemyHealth : MonoBehaviour
     {
         // Passes coordinating Ally object to Player Summons Class
         summons.SetSummonCreature(preFabObj);
+
+        // Sets -1 to number of enemies in scene, from EnemySpawner class
+        spawner.currentNumOfEnemies--;
 
         // Begins Enemy Death Animation
         anim.SetTrigger("Dying");
