@@ -1,4 +1,4 @@
-# Ludum Dare 55
+# Party's Over
 Author(s): Sean Mitchell
 
 Ludum Dare 55 Game Jam Submission!
